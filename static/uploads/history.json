@@ -1,0 +1,46 @@
+[
+    {
+        "patient_name": "Hana",
+        "patient_id": "76890",
+        "dob": "2024-07-17",
+        "age": "54",
+        "gender": "Female",
+        "classification": "normal",
+        "accuracy": 99.03,
+        "time": 0.75,
+        "image_file": "uploads/side_by_side.png"
+    },
+    {
+        "patient_name": "Hana",
+        "patient_id": "123213",
+        "dob": "2024-07-10",
+        "age": "56",
+        "gender": "Female",
+        "classification": "benign",
+        "accuracy": 67.41,
+        "time": 0.33,
+        "image_file": "uploads/side_by_side.png"
+    },
+    {
+        "patient_name": "Hana",
+        "patient_id": "12345",
+        "dob": "2024-07-17",
+        "age": "45",
+        "gender": "Female",
+        "classification": "malignant",
+        "accuracy": 99.77,
+        "time": 0.4,
+        "image_file": "uploads/side_by_side.png"
+    },
+    {
+        "patient_name": "Hana",
+        "patient_id": "123456",
+        "dob": "1999-01-14",
+        "age": "56",
+        "gender": "Female",
+        "classification": "benign",
+        "accuracy": 99.99,
+        "time": 0.4,
+        "image_file": "uploads/side_by_side.png"
+    }
+]

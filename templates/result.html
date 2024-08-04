@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Result</title>
+    <style>
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section h3 {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .result-container img {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .tumor-info {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: 'Balsamiq Sans', cursive;
+        }
+
+        .benign {
+            background-color: #ccffcc;
+        }
+
+        .malignant {
+            background-color: #ffccee;
+        }
+
+        .export-form {
+            margin-top: 30px;
+        }
+
+        .export-form label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Cancer is Predicted to be {{ classification }}</h1>      
+            <p>The Probability of {{ classification }} is {{ accuracy }} %.</p>
+            <p>The time taken to predict is {{ time }} s.</p>
+        </div>
+
+        <div class="info-section">
+            <h3>Classification Result: {{ classification }}</h3>
+            <h3>Patient Information</h3>
+            <table class="result-table">
+                <tr>
+                    <th>Patient Name</th>
+                    <td>{{ patient_name }}</td>
+                </tr>
+                <tr>
+                    <th>Patient ID</th>
+                    <td>{{ patient_id }}</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>{{ dob }}</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>{{ age }}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{ gender }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="info-section">
+            <h3>Segmentation Result:</h3>
+            {% if image_file %}
+            <div class="result-container">
+                <img src="{{ url_for('static', filename=image_file) }}" alt="Segmentation Result">
+            </div>
+            {% else %}
+            <p>No segmentation result available.</p>
+            {% endif %}
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-sm-6 tumor-info benign">
+                <h4 style="text-align: center;">Benign Tumors</h4>
+                <p>
+                    Since benign tumors are harmless, doctors may opt to leave the lump alone rather than remove it. If you are experiencing discomfort, irritation or pressure, let your doctor know so that she can plan to remove it for you and improve your comfort. 
+                </p>
+            </div>
+            <div class="col-sm-6 tumor-info malignant">
+                <h4 style="text-align: center;">Malignant Tumors</h4>
+                <p>
+                    Malignant tumors are cancerous and aggressive because they invade and damage surrounding tissue. When a tumor is suspected to be malignant, the doctor will perform a biopsy to determine the severity or aggressiveness of the tumor.
+                </p>
+            </div>
+        </div>
+
+        <form action="{{ url_for('export') }}" method="post" class="export-form">
+            <label for="format">Choose export format:</label>
+            <select name="format" id="format">
+                <option value="pdf">PDF</option>
+                <option value="txt">Text</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Export</button>
+        </form>
+
+        <a href="{{ url_for('main_menu') }}" class="btn btn-primary">Back to Main Menu</a>
+    </div>
+    <div class="footer">
+        © 2024 Breast Cancer Segmentation Application
+    </div>
+</body>
+</html>

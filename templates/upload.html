@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2>Upload Ultrasound or Biopsy Image</h2>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="form-inline justify-content-center">
+                    <div class="form-group mb-2">
+                        <label for="file" class="sr-only">Choose file:</label>
+                        <input type="file" id="file" name="file" class="form-control" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2 ml-2">Upload</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="{{ url_for('main_menu') }}" class="btn btn-secondary">Back to Main Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Breast Cancer Segmentation Application</p>
+    </div>
+</body>
+</html>

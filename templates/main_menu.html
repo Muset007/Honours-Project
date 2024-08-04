@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Main Menu</h2>
+        <div class="list-group">
+            <a href="{{ url_for('new_patient') }}" class="list-group-item list-group-item-action">New Patient</a>
+            <a href="{{ url_for('history') }}" class="list-group-item list-group-item-action">History</a>
+            <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action">Logout</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Breast Cancer Segmentation Application</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Export Report</h2>
+        <form action="{{ url_for('export') }}" method="post">
+            <div class="form-group">
+                <label for="format">Choose export format:</label>
+                <select id="format" name="format" class="form-control" required>
+                    <option value="pdf">PDF</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Export</button>
+        </form>
+        <div class="text-center">
+            <a href="{{ url_for('main_menu') }}" class="btn btn-secondary">Back to Main Menu</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Breast Cancer Segmentation Application</p>
+    </div>
+</body>
+</html>

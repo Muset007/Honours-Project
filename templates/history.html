@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>History</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Patient History</h2>
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Patient ID</th>
+                    <th>Classification</th>
+                    <th>Accuracy</th>
+                    <th>Time Taken</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, record in enumerate(history) %}
+                <tr>
+                    <td>{{ record.patient_name }}</td>
+                    <td>{{ record.patient_id }}</td>
+                    <td>{{ record.classification }}</td>
+                    <td>{{ record.accuracy }}%</td>
+                    <td>{{ record.time }}s</td>
+                    <td>
+                        <form action="{{ url_for('export_history') }}" method="post" style="display:inline;">
+                            <input type="hidden" name="patient_id" value="{{ record.patient_id }}">
+                            <select name="format">
+                                <option value="pdf">PDF</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary">Export</button>
+                        </form>
+                        <form action="{{ url_for('delete_history') }}" method="post" style="display:inline;">
+                            <input type="hidden" name="report_id" value="{{ index }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('main_menu') }}" class="btn btn-primary">Back to Main Menu</a>
+    </div>
+    <div class="footer">
+        © 2024 Breast Cancer Segmentation Application
+    </div>
+</body>
+</html>

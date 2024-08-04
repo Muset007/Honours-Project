@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Breast Cancer Segmentation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="main-content">
+            <h2 class="text-center">Welcome to the Breast Cancer Segmentation Application</h2>
+            <p class="text-center">This application helps in classifying and segmenting breast cancer images. Please log in to continue.</p>
+            
+            <h3>About The App</h3>
+            <p>To provide advanced image processing and classification tools to assist in the early detection and treatment of breast cancer.</p>
+
+            <div class="login-container text-center">
+                <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-body">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home">What is Breast Cancer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu1">Who gets Breast Cancer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu2">What Are the Symptoms of Breast Cancer</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-3">
+                        <div id="home" class="tab-pane fade show active">
+                            <h4>What is Breast Cancer</h4>
+                            <p>Cancers are typically named after the part of the body from which they originate. Breast cancer originates in the breast tissue. Like other cancers, breast cancer can invade and grow into the tissue surrounding the breast. It can also travel to other parts of the body and form new tumors, a process called metastasis.</p>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h4>Who gets Breast Cancer</h4>
+                            <p>Breast cancer ranks second as a cause of cancer death in women (after lung cancer). Today, about 1 in 8 women (12%) will develop breast cancer in her lifetime. The American Cancer Society estimated that in 2017, about 252,710 women will be diagnosed with invasive breast cancer and about 40,610 will die from the disease.</p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h4>What Are the Symptoms of Breast Cancer</h4>
+                            <ul>
+                                <li>A mass or lump, which may feel as small as a pea.</li>
+                                <li>A change in the size, shape, or contour of the breast.</li>
+                                <li>A blood-stained or clear fluid discharge from the nipple.</li>
+                                <li>Redness of the skin on the breast or nipple.</li>
+                                <li>An area that is distinctly different from any other area on either breast.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Breast Cancer Segmentation Application</p>
+    </div>
+</body>
+</html>

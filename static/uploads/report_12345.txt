@@ -1,0 +1,11 @@
+Patient Report
+
+Patient Name: Abebe
+Patient ID: 12345
+Date of Birth: 2024-07-15
+Age: 45
+Gender: Male
+Classification: normal
+Accuracy: 99.08%
+Time taken: 0.29s
+Image File: uploads/side_by_side.png
