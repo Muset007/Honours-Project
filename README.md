@@ -7,7 +7,7 @@ This is a Flask web application for breast cancer diagnosis using deep learning 
 - **User Authentication:** Secure login functionality for accessing the app.
 - **Image Classification:** Classifies ultrasound images into benign, malignant, or normal.
 - **Image Segmentation:** Segments the tumor area in ultrasound images.
-- **Report Generation:** Generates and exports patient reports in PDF or TXT format.
+- **Report Generation:** Generates and exports patient reports in PDF format.
 - **Patient History:** Keeps track of patient history and previous reports.
 
 ## Installation
